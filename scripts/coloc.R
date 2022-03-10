@@ -21,6 +21,7 @@ library('coloc')
 #library("locuscomparer")
 
 #eqtl <- read.table(gzfile(paste0(dbdir,"/",eqtl_file)),sep="\t", header=T, as.is=T);
+eqtl_file=paste0(eqtl_file,".v8.signif_variant_gene_pairs.txt")
 eqtl <- read.table(eqtl_file,sep="", header=T, as.is=T);
 
 #hg19_lookup_table= paste0(dbdir,"/","GTEx_Analysis_2017-06-05_v8_WholeGenomeSeq_838Indiv_Analysis_Freeze.lookup_table.txt.gz")
