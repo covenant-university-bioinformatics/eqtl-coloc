@@ -11,10 +11,10 @@
 #RUN R -e "install.packages(c('coloc'),dependencies=TRUE,repos='http://cran.rstudio.com/')"
 set -x;
 #development
-bindir="/local/datasets/eqtlcoloc"
+#bindir="/local/datasets/eqtlcoloc"
 
 #production
-#bindir="/mnt/d/eqtl-coloc"
+bindir="/local/datasets/eqtlcoloc"
 
 dbdir="${bindir}/coloc_eqtl_files"
 gwas_summary=$1
@@ -26,7 +26,7 @@ p12=$6
 type=$7 ##{"quant", "cc"} #quantification or case-control
 s=$8 #proportion between case and control (between 0 and 1)
 
-Rscript --vanilla ${bindir}/coloc.R ${gwas_summary}  ${outdir} ${dbdir}/${GTEX8tissue} \
+Rscript --vanilla ${bindir}/coloc.R ${gwas_summary}  ${outdir} "${dbdir}/${GTEX8tissue}.v8.signif_variant_gene_pairs.txt" \
    ${p1}   \
    ${p2}   \
    ${p12}  \
