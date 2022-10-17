@@ -61,7 +61,6 @@ const EqtlColocJobSchema = new mongoose.Schema<EqtlColocJobsDoc, JobsModel>(
     inputFile: {
       type: String,
       required: [true, 'Please add a input filename'],
-      unique: true,
       trim: true,
     },
     colocSummaryFile: {
